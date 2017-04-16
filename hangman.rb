@@ -30,10 +30,10 @@ class Game
 
     until result
       print_screeen(@word, @letters, @lvl)
+      @guess = nil
 
-      guess = get_guess
-      @letters << guess
-      result = get_result
+      @letters << get_guess
+      result    = get_result
     end
   end
 
@@ -56,14 +56,13 @@ class Game
     save   if response == "save"
     finish if response == "quit"
 
-    unless ("a".."z").include? response
+    if ("a".."z").include? response
+      @lvl += 1 unless @word.split("").include? response
+      response
+    else
       puts "Bad response #{response}"
       get_guess
     end
-
-    @lvl += 1 unless @word.split("").include? response
-
-    response
   end
 
   def get_result

@@ -4,7 +4,7 @@ module HangmanPrinter
     lvl_chars = {1=>(lvls.include? 1) ? "|" : " ",
                  2=>[(lvls.include? 2) ? "_" : " ", (lvls.include? 2) ? "\\" : " "],
                  3=>(lvls.include? 3) ? "|" : " ",
-                 4=>(lvls.include? 4) ? "\u2B24" : " ",
+                 4=>(lvls.include? 4) ? "\u2B24" : "  ",
                  5=>(lvls.include? 5) ? "|" : " ",
                  6=>(lvls.include? 6) ? "-" : " ",
                  7=>(lvls.include? 7) ? "-" : " ",
@@ -14,7 +14,7 @@ module HangmanPrinter
     puts "\t     #{ lvl_chars[2][0]*7 }"
     puts "\t     #{ lvl_chars[3] }   #{ lvl_chars[2][1] } #{ lvl_chars[1] }"
     puts "\t     #{ lvl_chars[3] }    #{ lvl_chars[2][1] }#{ lvl_chars[1] }"
-    puts "\t    #{ lvl_chars[4] }      #{ lvl_chars[1] }"
+    puts "\t    #{ lvl_chars[4] }     #{ lvl_chars[1] }"
     puts "\t  #{ lvl_chars[6]*3 }#{ lvl_chars[5] }#{ lvl_chars[7]*3 }  #{ lvl_chars[1] }"
     puts "\t     #{ lvl_chars[5] }     #{ lvl_chars[1] }"
     puts "\t    #{ lvl_chars[8] } #{ lvl_chars[9] }    #{ lvl_chars[1] }"
